@@ -1,0 +1,322 @@
+[19-Jan-2019 05:01:52 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 05:01:52 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 05:27:55 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 05:27:55 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:09:53 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:09:53 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:09:54 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:09:54 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:10:12 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:10:12 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:10:18 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:10:18 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:10:18 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:10:18 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:21:59 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:21:59 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:38:04 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 06:38:04 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 07:44:41 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 07:44:41 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 07:44:41 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 07:44:41 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 09:42:59 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 09:42:59 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 09:47:07 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 09:47:07 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 10:17:36 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 10:17:36 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 11:08:40 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 11:08:40 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 11:08:40 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 11:08:40 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 11:56:41 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 11:56:41 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 13:04:21 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 13:04:21 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 13:04:21 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 13:04:21 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:00:59 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:00:59 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:00:59 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:00:59 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:04:18 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:04:18 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:04:32 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:04:32 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:04:47 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:04:47 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:05:07 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:05:07 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:05:09 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:05:09 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:05:10 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:05:10 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:07:31 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:07:31 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:08:59 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:08:59 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:18:37 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:18:37 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:19:23 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:19:23 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:27:22 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:27:22 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:27:44 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:27:44 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:27:46 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:27:46 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:31:00 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:31:00 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:32:28 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:32:28 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:35:32 UTC] PHP Warning:  Uncaught ErrorException: require(/home/voaukm07jlz6/public_html/routes/api.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/voaukm07j...', 327, Array)
+#1 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/home/voaukm07j...')
+#4 /home/voaukm07jlz6/public_html/app/Providers/RouteServiceProvider.php(71): Illuminate\Routing\RouteRegistrar->group('/home/v in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[19-Jan-2019 14:35:32 UTC] PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/home/voaukm07jlz6/public_html/routes/api.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327
+[05-Nov-2020 04:39:58 UTC] PHP Fatal error:  Out of memory (allocated 1419771904) (tried to allocate 792739840 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/bc818854419eb0aea07a1a497f5817eb20699d77.php on line 429
+[05-Nov-2020 05:05:27 UTC] PHP Fatal error:  Out of memory (allocated 1778384896) (tried to allocate 499138560 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/bc818854419eb0aea07a1a497f5817eb20699d77.php on line 383
+[05-Nov-2020 05:11:04 UTC] PHP Fatal error:  Out of memory (allocated 1910505472) (tried to allocate 511721472 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/bc818854419eb0aea07a1a497f5817eb20699d77.php on line 422
+[05-Nov-2020 05:57:19 UTC] PHP Fatal error:  Out of memory (allocated 975175680) (tried to allocate 599801856 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/bc818854419eb0aea07a1a497f5817eb20699d77.php on line 381
+[05-Nov-2020 06:00:56 UTC] PHP Fatal error:  Out of memory (allocated 1900019712) (tried to allocate 824197120 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/bc818854419eb0aea07a1a497f5817eb20699d77.php on line 436
+[05-Nov-2020 06:15:21 UTC] PHP Fatal error:  Out of memory (allocated 1900019712) (tried to allocate 824197120 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/bc818854419eb0aea07a1a497f5817eb20699d77.php on line 436
+[05-Nov-2020 06:35:53 UTC] PHP Fatal error:  Out of memory (allocated 1447034880) (tried to allocate 383795200 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/bc818854419eb0aea07a1a497f5817eb20699d77.php on line 380
+[05-Nov-2020 06:40:47 UTC] PHP Fatal error:  Out of memory (allocated 1900019712) (tried to allocate 824197120 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/bc818854419eb0aea07a1a497f5817eb20699d77.php on line 436
+[05-Nov-2020 06:57:50 UTC] PHP Fatal error:  Out of memory (allocated 1900019712) (tried to allocate 824197120 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/bc818854419eb0aea07a1a497f5817eb20699d77.php on line 437
+[06-Nov-2020 02:22:22 UTC] PHP Fatal error:  Out of memory (allocated 379584512) (tried to allocate 188760064 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/b76ae042781e3f8f47ae2bbaf7caff1c62d3e91a.php on line 303
+[06-Nov-2020 02:39:10 UTC] PHP Fatal error:  Out of memory (allocated 1941962752) (tried to allocate 606093312 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/b76ae042781e3f8f47ae2bbaf7caff1c62d3e91a.php on line 442
+[06-Nov-2020 03:54:27 UTC] PHP Fatal error:  Out of memory (allocated 1832910848) (tried to allocate 840974336 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/bc818854419eb0aea07a1a497f5817eb20699d77.php on line 381
+[06-Nov-2020 03:59:02 UTC] PHP Fatal error:  Out of memory (allocated 1900019712) (tried to allocate 824197120 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/bc818854419eb0aea07a1a497f5817eb20699d77.php on line 437
+[06-Nov-2020 04:04:55 UTC] PHP Fatal error:  Out of memory (allocated 1941962752) (tried to allocate 606093312 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/b76ae042781e3f8f47ae2bbaf7caff1c62d3e91a.php on line 442
+[06-Nov-2020 04:11:38 UTC] PHP Fatal error:  Out of memory (allocated 2145386496) (tried to allocate 1044398080 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/b76ae042781e3f8f47ae2bbaf7caff1c62d3e91a.php on line 442
+[06-Nov-2020 04:23:18 UTC] PHP Fatal error:  Out of memory (allocated 1900019712) (tried to allocate 824197120 bytes) in /home/voaukm07jlz6/public_html/storage/framework/views/bc818854419eb0aea07a1a497f5817eb20699d77.php on line 437
+[07-Apr-2021 05:11:41 UTC] PHP Warning:  Uncaught ErrorException: require_once(/home/voaukm07jlz6/public_htmlvendor/coinbase/coinbase-commerce/src/ApiClient.php): failed to open stream: No such file or directory in /home/voaukm07jlz6/public_html/app/Http/Controllers/btc/BtcOneTimePaymentController.php:15
+Stack trace:
+#0 /home/voaukm07jlz6/public_html/app/Http/Controllers/btc/BtcOneTimePaymentController.php(15): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require_once(/h...', '/home/voaukm07j...', 15, Array)
+#1 /home/voaukm07jlz6/public_html/app/Http/Controllers/btc/BtcOneTimePaymentController.php(15): require_once()
+#2 /home/voaukm07jlz6/public_html/vendor/composer/ClassLoader.php(444): include('/home/voaukm07j...')
+#3 /home/voaukm07jlz6/public_html/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home/voaukm07j...')
+#4 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Http\\Contro...')
+#5 [internal function]: spl_autoload_call('App\\Http\\Contro...')
+#6 /home/voaukm07jlz6/public_html/vend in /home/voaukm07jlz6/public_html/app/Http/Controllers/btc/BtcOneTimePaymentController.php on line 15
+[07-Apr-2021 05:11:41 UTC] PHP Fatal error:  main(): Failed opening required '/home/voaukm07jlz6/public_htmlvendor/coinbase/coinbase-commerce/src/ApiClient.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/voaukm07jlz6/public_html/app/Http/Controllers/btc/BtcOneTimePaymentController.php on line 15
