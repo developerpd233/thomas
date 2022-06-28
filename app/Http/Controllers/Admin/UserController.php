@@ -50,7 +50,7 @@ class UserController extends Controller {
      * @return Response
      */
     public function index(Request $request) {
-
+        
         //Get model
         $this->user->pushCriteria(new \App\Criteria\Admin\UserCriteria());
         $grid = new Grid();
@@ -442,11 +442,14 @@ class UserController extends Controller {
     }
 
     public function details($id) {
+        
         if (Auth::user()->username == 'admin'):
             $isAdmin = true;
         else:
             $isAdmin = false;
         endif;
+        
+        // die('sfdsdfs');
         $user = Auth::user();
         $amount = Session::get('amount');
         $comm = Session::get('comm');
@@ -456,6 +459,8 @@ class UserController extends Controller {
         $users = $this->user->findByField('parent_id', $id);
         $parent = $this->user->findByField('id', $id);
         $count = $this->user->findByField('parent_id', $id)->count();
+        //print_r($count);
+        //die("hello world");
         $admin = [
             'id' => $id,
             'users' => $users,
@@ -478,6 +483,12 @@ class UserController extends Controller {
         return view('user.user_details_sub_level ', $admin);
 //        return view('admin.user-commission.details', $admin);
     }
+    
+    
+    
+    // public function testing(){
+    //     die("hello Ammar bhai");
+    // }
 
     public function details_history($id) {
         
@@ -584,6 +595,7 @@ class UserController extends Controller {
     }
 
     public function paid_tree_list2() {
+        
         $amount = Session::get('amount');
         $comm = Session::get('comm');
         $total1 = Session::get('total');
@@ -620,7 +632,7 @@ class UserController extends Controller {
     }
 
     public function paid_tree_list() {
-    
+    dd("casca");
         $amount = Session::get('amount');
         $comm = Session::get('comm');
         $total1 = Session::get('total');

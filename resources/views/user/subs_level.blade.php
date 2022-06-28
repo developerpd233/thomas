@@ -9,7 +9,74 @@
     .myTable>tbody>.myTableRow>th {
         padding: 0px;
     }
+    
+.col-md-12 {
+    background: white;
+    padding-bottom: 80px;
+}
+div#table_id_info, div#table_id_paginate {
+    position: absolute;
+    bottom: -170px;
+    width: 100%;
+}
+.main-total-row {
+    display: flex;
+}
+
+.main-total-row div {
+    display: inline-block;
+}
+
+.main-total-row div.mont-fees {
+    width: 41%;
+    text-align: center;
+}
+
+.main-total-row .Right-wrong {width: 8%;text-align: center;}
+
+.main-total-row .total-fee {
+    width: 13%;
+    text-align: center;
+}
+
+.main-total-row .total-commission {
+    width: 4%;
+    text-align: center;
+}
+
+.main-total-row2 {display: flex;
+    margin-top: 20px;}
+
+.main-total-row2 .total-com {
+    width: 44%;
+    text-align: center;
+}
+
+.main-total-row2 .total-num {
+    text-align: center;
+    width: 23%;
+}
+.main-total {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 20px;
+}
+div#table_id_filter {
+    display: none;
+}
+td.zero {
+    visibility: hidden;
+}
+
+
+
+
+
 </style>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 
 @section('page_title')
 {{ trans('app.tree') }}
@@ -18,6 +85,7 @@
 @section('content')
 <br>
 <?php $count = 0 ?>
+
 <?php
 
 $comm = '$7.5';
@@ -70,7 +138,9 @@ if($actual_link == '/commission'){
         <input name="daterange1" type="text" placeholder="select Month" autocomplete="off">&nbsp;&nbsp;<input class="btn btn-primary text-white" type="submit" id="btn_submit1" value="Apply" >&nbsp;&nbsp;<a href="{{ url('user/tree') }}" class="btn btn-primary text-white">Reset</a>
     </div>
 </form>
-<?php } ?>
+<?php } 
+
+?>
 
 <div class="col-md-4">
         @if($month ==1)
@@ -113,6 +183,11 @@ if($actual_link == '/commission'){
     });
 </script>
 
+<?php
+    // echo "<pre>";
+    // print_r($users);
+    // echo "<pre>";
+?>
 @foreach($users as $user )
 <?php $count++ ?>
 @endforeach
@@ -124,38 +199,49 @@ if($actual_link == '/commission'){
 <a href="{{url('admin/user/pay_commission')}}" class="btn btn-primary text-white" value="Back" style="margin-right: 5px; float: right;">Back</a>
 @endif
 <br>
-<table class="table myTable">
-    <thead class="thead-dark">
+
+<?php
+    // dd($users, $users[0]->children, $users[0]->children[1]->children);
+?>
+
+
+
+<table id="table_id" class="display">
+    <thead>
         <?php if ($count) : ?>
-            <tr>
-                <th scope="col">Level</th>
-                <th scope='col'>SN</th>
-                <th scope="col">Subscribers</th>
-                <th>Created At</th>
-                <th scope="col">Status</th>
-                <th scope="col">Total fees</th>
-                <th scope="col">Total commissions</th>
-                <th scope="col">Paid At</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <!--?php echo"<pre>";print_r($month);echo"</pre>";?-->
-            {{-- 8888888888888888888888888888888888888   Level one    88888888888888888888888888888888888888888888888888888888--}}
-            <?php
-            $count = 1;
+        <tr>
+                <th style = "width: 51px;">Level</th>
+                <th style = "width: 31px;">SN</th>
+                <th style = "width: 149px;">Subscribers</th>
+                <th style = "width: 99px;">Created At</th>
+                <th style = "width: 60px;">Status</th>
+                <th style = "width: 87px;">Total fees</th>
+                <th style = "width: 160px;">Total commissions</th>
+                <th style = "width: 68px;">Paid At</th>
+                <th style = "width: 80px;">Message</th>
+        </tr>
+    </thead>
+    <tbody>
+
+            
+            
+   <?php
             $level = 1;
+            $count = 1;
             $one = 0;
-            ?>
-    <?php foreach ($users as $list) : ?>
-            <?php if(!$final_filter): ?>
-                <tr class="myTableRow">
-                    <th>{{$level}}</th>
-                    <td>{{$count}}</td>
-                    <td>{{$list->first_name." ". $list->last_name}}</td>
-                    <td>{{!$list->created_at? '__':$list->created_at}}</td>
-                    <td> <?php
-                        if ($list->is_active == 'YES' && $list->isActiveByComission == 'NO') {
+          ?>
+   
+  <?php foreach ($users as $list) : ?>
+    <?php if(!$final_filter): ?>
+      <tr class="level1">
+            <td>{{$level}}</td>
+            <td>{{$count}}</td>
+            <td>{{$list->first_name." ". $list->last_name}}</td>
+            <td>{{!$list->created_at? '__':$list->created_at}}</td>
+            <td> <?php
+            //   echo '&#x274C';
+            // dd($list);
+                        if ($list->is_active == 'YES' && $list->isActiveByComission == 'NO') {            
                             if(ifRegisteredThisMonth($list->created_at) == "true"){
                                 $countNewRegistrations += 1;
                                 if($list->subscriber_commision >= 50):
@@ -174,10 +260,13 @@ if($actual_link == '/commission'){
                             echo '&#9989'; //right
                             $one++;    
                         } else {
+                            // dd("test");
                             echo '&#x274C';//&#x274C
                         }
-                        ?></td>
-                    <td>
+                        ?>
+            </td>
+            
+            <td>
                         <?php
                         if ($list->is_active == 'YES' && $list->isActiveByComission == 'NO') {                            
                             if (ifRegisteredThisMonth($list->created_at) == "true") {
@@ -195,8 +284,8 @@ if($actual_link == '/commission'){
                             echo 'Not paid';
                         }
                         ?>
-                    </td>
-                    <td> 
+            </td>
+            <td> 
                         <?php
                         if ($list->is_active == 'YES' && $list->isActiveByComission == 'NO') {                            
                             if (ifRegisteredThisMonth($list->created_at) == "true") {
@@ -214,8 +303,9 @@ if($actual_link == '/commission'){
                             echo '0';
                         }
                         ?>
-                    </td>
-                    @if($list->paid_at == null)
+            </td>
+                   
+             @if($list->paid_at == null)
                     <td id="{{$list->id}}">
                         <!-- @if($isAdmin)
                         @if($isHistory)
@@ -231,15 +321,18 @@ if($actual_link == '/commission'){
                     @else
                     <td id="{{$list->id}}">{{(new \DateTime($list->paid_at))->format('d-M-Y')}}</td>
                     @endif
+                        
                     <td>
                         <a href="/message/{{$user->username}}" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
                     </td>
-                </tr>
+                    
+                    
+        </tr>
                 <?php
-                $count++;
-                $level = "";
+                    $count++;
+                    // $level = " ";
                 ?>
-                <?php elseif( date('Y-m', strtotime($list->created_at)) == date('Y-m', strtotime($final_filter)) ): ?>
+                <?php elseif( date('Y-m', strtotime($list->created_at)) <= date('Y-m', strtotime($final_filter)) ): ?>
                     <tr class="myTableRow">
                         <th>{{$level}}</th>
                         <td>{{$count}}</td>
@@ -259,6 +352,7 @@ if($actual_link == '/commission'){
                                     endif;
                                 }
                                 else{
+                                    // dd("test");
                                     echo '&#9989'; //right 
                                     $one++;
                                 }
@@ -324,15 +418,24 @@ if($actual_link == '/commission'){
                     </tr>
                     <?php
                     $count++;
-                    $level = "";
+                    // $level = "";
                     ?>
                 <?php endif; ?>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
+  
+            {{-- //////////////////////////////////////////////////////////// Level Two \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\--}}
 
-            {{-- 8888888888888888888888888888888888888   Level Two    88888888888888888888888888888888888888888888888888888888--}}
             <tr>
-                <td colspan="7"></td>
-            </tr>
+                <td class="zero">1</td>
+                <td class="zero">1</td>
+                <td class="zero">1</td>
+                <td class="zero">1</td>
+                <td class="zero">1</td>
+                <td class="zero">1</td>
+                <td class="zero">0</td>
+                <td class="zero">1</td>
+                <td class="zero">1</td>
+            </tr> 
             <?php
             $count1 = 1;
             $secondLevel = 2;
@@ -342,7 +445,7 @@ if($actual_link == '/commission'){
                 <?php $second_level = $user->children ?>
                     @foreach($second_level as $second)
                     <?php if(!$final_filter): ?>
-                        <tr class="myTableRow">
+                        <tr class="myTableRow level2">
                             <th>{{$secondLevel}}</th>
                             <td><?php echo $count1 ?></td>
                             <td>{{$second->first_name." ".$second->last_name}}</td>
@@ -420,9 +523,9 @@ if($actual_link == '/commission'){
                         </tr>
                         <?php
                         $count1++;
-                        $secondLevel = "";
+                        // $secondLevel = " ";
                         ?>
-                    <?php elseif( date('Y-m', strtotime($second->created_at)) == date('Y-m', strtotime($final_filter)) ): ?>    
+                        <?php elseif( date('Y-m', strtotime($second->created_at)) <= date('Y-m', strtotime($final_filter)) ): ?>    
                         <tr class="myTableRow">
                             <th>{{$secondLevel}}</th>
                             <td><?php echo $count1 ?></td>
@@ -430,7 +533,9 @@ if($actual_link == '/commission'){
                             <td>{{!$second->created_at? '__':$second->created_at}}</td>
                             <td> 
                                 <?php
-                                if ($second->is_active == 'YES') {                            
+
+                                if ($second->is_active == 'YES') {    
+                                    
                                     if (ifRegisteredThisMonth($second->created_at) == "true") {
                                         if($second->subscriber_commision >= 50):
                                             echo '&#9989'; //right
@@ -439,6 +544,7 @@ if($actual_link == '/commission'){
                                             echo '&#x274C';//wrong
                                         endif;
                                     } else {
+                                        // dd("test");
                                         echo '&#9989'; //right 
                                         $two++;
                                     }
@@ -494,18 +600,26 @@ if($actual_link == '/commission'){
                         </tr>
                         <?php
                         $count1++;
-                        $secondLevel = "";
+                        // $secondLevel = "";
                         ?>
-                    <?php endif; ?>    
-                @endforeach
+                    <?php endif; ?>
             @endforeach
-
-
-
-            {{-- //////////////////////////////////////////  Level 3  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ --}}
+        @endforeach
+       
+       
+        
+            {{-- //////////////////////////////////////////////////////////// Level three \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\--}}
             <tr>
-                <td colspan="7"></td>
-            </tr>
+                <td class="zero">2</td>
+                <td class="zero">2</td>
+                <td class="zero">2</td>
+                <td class="zero">2</td>
+                <td class="zero">2</td>
+                <td class="zero">2</td>
+                <td class="zero">0</td>
+                <td class="zero">2</td>
+                <td class="zero">2</td>
+            </tr> 
             <?php
             $levelThree = 3;
             $count2 = 0;
@@ -593,8 +707,12 @@ if($actual_link == '/commission'){
                                         <a href="/message/{{$third->username}}" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
                                     </td>
                                 </tr>     
-                                <?php $levelThree = "" ?>
-                            <?php elseif( date('Y-m', strtotime($third->created_at)) == date('Y-m', strtotime($final_filter)) ): ?>
+                                <?php 
+                                
+                                    // $levelThree = " ";
+                                
+                                ?>
+                            <?php elseif( date('Y-m', strtotime($third->created_at)) <= date('Y-m', strtotime($final_filter)) ): ?>
                                 <tr class="myTableRow">
                                     <th>{{$levelThree}}</th>
                                     <td>{{++$count2}}</td>
@@ -664,18 +782,30 @@ if($actual_link == '/commission'){
                                         <a href="/message/{{$third->username}}" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
                                     </td>
                                 </tr>
-                                <?php $levelThree = "" ?>    
+                                <?php 
+                                
+                                    // $levelThree = "";
+                                ?>    
                             <?php endif; ?>                                
                     @endforeach
                 @endforeach
             @endforeach
-
-
-
+       
+       
+       
             {{-- //////////////////////////////////////////////////////////// Level Four \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\--}}
             <tr>
-                <td colspan="7"></td>
+                <td class="zero">3</td>
+                <td class="zero">3</td>
+                <td class="zero">3</td>
+                <td class="zero">3</td>
+                <td class="zero">3</td>
+                <td class="zero">3</td>
+                <td class="zero">0</td>
+                <td class="zero">3</td>
+                <td class="zero">3</td>
             </tr> 
+     
             <?php
             $levelFour = 4;
             $count3 = 0;
@@ -764,7 +894,9 @@ if($actual_link == '/commission'){
                                     <td><a href="/message/{{$forth->username}}" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
                                     </td>
                                 </tr>
-                                <?php $levelFour = "";?>
+                                <?php 
+                                // $levelFour = " ";
+                                ?>
                             <?php elseif( date('Y-m', strtotime($forth->created_at)) == date('Y-m', strtotime($final_filter)) ): ?>
                                <tr class="myTableRow">
                                     <th>{{$levelFour}}</th>
@@ -834,16 +966,29 @@ if($actual_link == '/commission'){
                                     <td><a href="/message/{{$forth->username}}" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
                                     </td>
                                 </tr>
-                               <?php $levelFour = ""; ?>
+                               <?php 
+                            //   $levelFour = "";
+                               ?>
                             <?php endif; ?>
                         @endforeach                            
                     @endforeach
                 @endforeach
             @endforeach
+       
+       
+       
+       
+       
+       
+       
+    </tbody>
+</table>
 
 
-            {{-- ???????????????????????????????????  Total ???????????????????????????????????????????????????????????????????????????????????????--}}
-            <?php $total = $one + $two + $three + $four; ?>
+<?php $total = $one + $two + $three + $four; 
+// dd($total);
+?>
+
             <?php if(ifRegisteredThisMonth($authUser->created_at) == "true"): //if user registered for this month?> 
                 <tr>
                     <th colspan="4" style="text-align: center;font-size: 2rem">Monthly Fees Through Subscriptions</th>
@@ -881,141 +1026,160 @@ if($actual_link == '/commission'){
                         ?>
                     </td>
                 </tr>
+            
+            
+            
+            
+            
             <?php else:  //if user not registered for this month ?>
-                <tr>
-                    <th colspan="4" style="text-align: center;font-size: 2rem">Monthly Fees Through Subscriptions</th>
-                    <!-- Right/wrong arrow -->
-                    <td style="font-size: 2rem">
-                        <?php      
-                        if ($countNewRegistrations >= 0 || $authUser->is_active == 'YES') {
-                                echo '&#9989';                            
-                        } else {
-                            echo '&#x274C';
-                        }
-                        ?>
-                    </td>
-                    <!-- Total fees -->
-                    <td style="font-size: 2rem">
-                        <?php
-                        if ($countNewRegistrations >= 0 || $authUser->is_active == 'YES') {
-                            echo $amount;                                                                                    
-                        } else {
-                            echo 'Not Paid';
-                        }
-                        ?>                    
-                    </td>
-                    <!-- Total commissions -->
-                    <td style="font-size: 2rem">                    
-                        <?php
-                        if ($countNewRegistrations >= 0 && $authUser->subscriber_commision >= 50 ) {
-                            if($authUser->subscriber_commision >= 50){
-                                echo '$50';
-                            } else{
-                                $totaComission = ( ($countNewRegistrations) * 25);
-                                echo '$'.$totaComission;    
-                            }
-                        } else if($countNewRegistrations >= 0 && $authUser->is_active == 'YES' && $authUser->isActiveByComission == 'NO' ){
+            <div class="main-total">
+    <div class="main-total-row">
+        <div class="mont-fees">
+            Monthly Fees Through Subscriptions
+        </div>
+        <div class="Right-wrong">
+            <!--Right/wrong arrow-->
+            <?php      
+                                if ($countNewRegistrations >= 0 || $authUser->is_active == 'YES') {
+                                        echo '&#9989';                            
+                                } else {
+                                    echo '&#x274C';
+                                }
+                ?>
+        </div>
+        <div class="total-fee">
+            <!--Total fees-->
+            <?php
+                    if ($countNewRegistrations >= 0 || $authUser->is_active == 'YES') {
+                        echo $amount;                                                                                    
+                    } else {
+                        echo 'Not Paid';
+                    }
+                ?>
+        </div>
+        <div class="total-commission">
+            <!--Total commissions-->
+            <?php
+                    if ($countNewRegistrations >= 0 && $authUser->subscriber_commision >= 50 ) {
+                        if($authUser->subscriber_commision >= 50){
                             echo '$50';
-                        } else {
-                            echo '0';
+                        } else{
+                            $totaComission = ( ($countNewRegistrations) * 25);
+                            echo '$'.$totaComission;    
                         }
-                        ?>
-                    </td>
-                    <!-- User can with drawn -->
-                    <td style="font-size: 2rem">
-                        <?php
-                        if ($authUser->subscriber_commision > 50) {
-                            echo '$'.(((int)$authUser->subscriber_commision) - 50 );
-                        }
-                        /*if ($countNewRegistrations > 2) {
-                            $canWithDrawn = (($countNewRegistrations - 2) * 25);
-                            if($canWithDrawn > 0):
-                                echo '$'.((int)$canWithDrawn);
-                            endif;
-                        }*/
-                        ?>                        
-                    </td>
-                </tr>
-            <?php endif; ?>    
-            <?php /* ?>    
-            <tr>
-                <th colspan="3" style="text-align: center;font-size: 2rem">Total Fees Paid by Subscribers (at 4 Levels)</th>
-                <td colspan="3" style="text-align: center;font-size: 2rem">
-                    @if(env('SITE') == 'ENG')
-                    ${{$total*50}}
-                    @else
-                    {{$total*1000}}F
-                    @endif
-                </td>
-            </tr>
-            <?php */ ?>    
-            <tr>
-                <th colspan="3" style="text-align: center;font-size: 2rem">Total Commission at 4 levels 60% (15% at each level)</th>
-                <td colspan="3" style="text-align: center;font-size: 2rem">
-                    @if(env('SITE') == 'ENG')
-                    <?php $commission_perc = (50*15)/100; ?>
-                    ${{$total*$commission_perc}}
-                    @else
-                    <?php $commission_perc = (1000*15)/100; ?>
-                    {{$total*$commission_perc}}
-                    @endif
-                </td>
-            </tr>     
-<?php /*For those user who pays fees */
-    elseif($countNewRegistrations == -2 && $authUser->is_active == 'YES' && $authUser->isActiveByComission == 'NO' && empty($final_filter)): ?>  
-        <tr>
-            <th scope="col">Level</th>
-            <th scope='col'>SN</th>
-            <th scope="col">Subscribers</th>
-            <th>Created At</th>
-            <th scope="col">Status</th>
-            <th scope="col">Total fees</th>
-            <th scope="col">Total commissions</th>
-            <th scope="col">Paid At</th>
-            <th scope="col"></th>
-        </tr>
-        <?php if(ifRegisteredThisMonth($authUser->created_at) == "true"): //if user registered for this month?>
-            <tr>
-                <th colspan="4" style="text-align: center;font-size: 2rem">Monthly Fees Through Subscriptions</th>
-                <!-- Right/wrong arrow -->
-                <td style="font-size: 2rem">
-                    <?php echo '&#9989'; ?>
-                </td>
-                <!-- Total fees -->
-                <td style="font-size: 2rem">$0</td>
-                <!-- Total commissions -->
-                <td style="font-size: 2rem"></td>
-                <!-- User can with drawn -->
-                <td style="font-size: 2rem"></td>
-            </tr>
-        <?php else:  //if user not registered for this month ?>     
-            <tr>
-                <th colspan="4" style="text-align: center;font-size: 2rem">Monthly Fees Through Subscriptions</th>
-                <!-- Right/wrong arrow -->
-                <td style="font-size: 2rem">
-                    <?php echo '&#9989'; ?>
-                </td>
-                <!-- Total fees -->
-                <td style="font-size: 2rem">
-                    <?php echo '$50'; ?>
-                </td>
-                <!-- Total commissions -->
-                <td style="font-size: 2rem">
-                    <?php echo '$0'; ?>
-                </td>
-                <!-- User can with drawn -->
-                <td style="font-size: 2rem"></td>
-            </tr>
+                    } else if($countNewRegistrations >= 0 && $authUser->is_active == 'YES' && $authUser->isActiveByComission == 'NO' ){
+                        echo '$50';
+                    } else {
+                        echo '0';
+                    }
+                ?>
+        </div>
+        <div class="draw-can">
+            <!--User can with drawn-->
+            <?php
+                    if ($authUser->subscriber_commision > 50) {
+                        echo '$'.(((int)$authUser->subscriber_commision) - 50 );
+                    }
+                    /*if ($countNewRegistrations > 2) {
+                        $canWithDrawn = (($countNewRegistrations - 2) * 25);
+                        if($canWithDrawn > 0):
+                            echo '$'.((int)$canWithDrawn);
+                        endif;
+                    }*/
+                ?>
+        </div>
+    </div>
+    <div class="main-total-row2">
+        <div class="total-com">
+            Total Commission at 4 levels 60% (15% at each level)
+        </div>
+        <div class="total-num">
+            @if(env('SITE') == 'ENG')
+            <?php $commission_perc = (50*15)/100; ?>
+            <div class="divtotal">
+            </div>
+            @else
+            <?php $commission_perc = (1000*15)/100; ?>
+
+            <div class="divtotal">
+            </div>
+
+            @endif
+        </div>
+    </div>
+</div>
+
         <?php endif; ?>
-            <tr>
-                <th colspan="3" style="text-align: center;font-size: 2rem">Total Commission at 4 levels(15% at each level)</th>
-                <td colspan="3" style="text-align: center;font-size: 2rem">$0.0</td>
-            </tr>
+    
 <?php else : ?>
         <h1>Users don't have any subscriber</h1>
-<?php endif; ?>
-</tbody>
-</table>
+<?php endif; ?>       
+
+
+
+
+
+<script src="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"/></script>
+<script>
+$(document).ready( function () {
+    
+    $('#table_id').DataTable({
+        lengthMenu: [
+            [500, 1000, 5000, 10000],
+            [500, 1000, 5000, 10000],
+        ],
+    });
+    
+    
+    
+    $('#table_id').DataTable();
+    function calculaterows(){
+        
+        
+        
+            var table = $('#table_id').DataTable();
+            // var lengthrow = table.rows({ page: 'current' }).nodes().length;
+            // var datas = table.column(6).data();
+            
+            
+            var datas = table.column(6, { page:'current' }).data();
+            var columval = 0;
+                $.each(datas, function(index, value) {
+                columval = columval+parseFloat(value.replace("$",""));
+                });
+            $('.divtotal').text('$'+columval);
+             
+
+            
+            // var rownumber = '<?php //echo $commission_perc ?>';
+            // var total = lengthrow * rownumber;
+            // // $('.divtotal').text('$'+total);
+            // $('.divtotal').text('$'+total);
+        
+    }
+    
+    $('.dataTables_wrapper').on('mousedown touchstart', '.paginate_button:not(.previous):not(.next)', function() {
+         setTimeout(function() { 
+            calculaterows();
+         }, 500);
+    });
+    setTimeout(function() {
+            calculaterows();
+    }, 500);
+   
+    $("select[name^='table_id_length']").on('change', function() {
+        // var pagelen = $(this).val();
+       calculaterows();
+    });
+   
+   setTimeout(function() {
+        // var pagelen = table.page.len();
+        calculaterows();
+    }, 500);
+    
+} );
+</script>
 
 {{--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--}}
 

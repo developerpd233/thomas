@@ -119,6 +119,9 @@ class NewsController extends Controller
         }
     }
 
+    
+
+
     public function update(NewsUpdateRequest $request, $Id)
     {
         /*$data = $request->except(['_token']);

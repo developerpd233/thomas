@@ -15,7 +15,8 @@
 
 @section('content')
 <br>
-<?php $count = 0 ?>
+<?php 
+$count = 0 ?>
 <?php
 
 $comm = '$7.5';
@@ -33,7 +34,6 @@ function ifRegisteredThisMonth($created_at) {
     $diff = ($todayDateee == $registerDate ? "true" : "false");
     return $diff;
 }
-
 ?>
 <form method="POST" action="{{route('admin.user.details',['id' => $id])}}" accept-charset="UTF-8">
     <style>
@@ -123,14 +123,18 @@ function ifRegisteredThisMonth($created_at) {
             </tr>
     </thead>
     <tbody>
-        <!--?php echo"<pre>";print_r($users);echo"</pre>";?-->
+        
+    
+        <!--<?php echo"<pre>";print_r($users);echo"</pre>";?>-->
         {{-- 8888888888888888888888888888888888888   Level one    88888888888888888888888888888888888888888888888888888888--}}
         <?php
             $count = 1;
             $level = 1;
             $one = 0;
+            //dd($users);
         ?>
         <?php foreach ($users as $list) : ?>
+        
             <?php if(!$final_filter): ?>
                 <tr class="myTableRow">
                     <th>{{$level}}</th>
@@ -222,6 +226,7 @@ function ifRegisteredThisMonth($created_at) {
                 <?php
                 $count++;
                 $level = "";
+                //dd($users);
                 ?>
                 <?php elseif( date('Y-m', strtotime($list->created_at)) == date('Y-m', strtotime($final_filter)) ): ?>
                     <tr class="myTableRow">
@@ -306,13 +311,16 @@ function ifRegisteredThisMonth($created_at) {
                             <a href="/message/{{$user->username}}" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
                         </td>
                     </tr>
+                     
                     <?php
                     $count++;
                     $level = "";
+                    
                     ?>
                 <?php endif; ?>
-        <?php endforeach; ?>
 
+        <?php endforeach; ?>
+        
 
 
         {{-- 8888888888888888888888888888888888888   Level Two    88888888888888888888888888888888888888888888888888888888--}}

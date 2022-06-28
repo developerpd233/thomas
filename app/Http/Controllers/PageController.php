@@ -23,6 +23,7 @@ use App\model\Users;
 class PageController extends Controller
 {
 
+
     protected $page;
     protected $faq;
     protected $news;
@@ -96,6 +97,7 @@ class PageController extends Controller
      */
     public function newsDetails($id)
     {
+     
         $news = $this->news->find($id);
         return view('page.news-detail', ['news' => $news]);
     }

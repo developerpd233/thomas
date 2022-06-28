@@ -13,7 +13,10 @@ Route::pattern('any', '(.*)');
 
 /************edited By Avdesh  04-06-2020*************/
 
+
+
 Route::get('/test', ['as' => '', 'uses' => 'OnlinePaymentController@test']);
+
 
 // Route::get('user-academy/video', ['as' => '.video', 'uses' => 'UserAcademyController@view_video']);
 // Route::get('user-academy/course', ['as' => '.course', 'uses' => 'UserAcademyController@view_course']);
@@ -220,6 +223,7 @@ Route::group(['middleware' => ['auth', 'fe.navigation', 'fe.breadcrumbs', 'isVer
         Route::get('/dashboard', ['as' => '.dashboard', 'uses' => 'UserController@dashboard']);
         Route::get('/account', ['as' => '.account', 'uses' => 'UserController@edit']);
         Route::post('/account', ['as' => '.account', 'uses' => 'UserController@update']);
+        //Route::get('/treecheck', ['as' => '.treecheck', 'uses' => 'UserController@tree_check']);
         Route::get('/tree', ['as' => '.tree', 'uses' => 'UserController@tree_list']);
         Route::post('/tree', ['as' => '.tree', 'uses' => 'UserController@history_tree_list']);
         //Route::get('/paid', ['as' => '.paid', 'uses' => 'UserController@paid_tree_list']);
@@ -340,6 +344,12 @@ Route::group(['middleware' => ['auth', 'be.navigation', 'be.breadcrumbs', 'check
     Route::any('/', ['as' => 'admin.dashboard', 'uses' => 'Admin\IndexController@index', 'can' => 'access.admin.dashboard']);
     // Users
     Route::group(['as' => 'admin.user', 'prefix' => 'user'], function () {
+        
+        // die('testing');
+        Route::get('/testing', ['as' => '.test', 'uses' => 'Admin\PageController@testing']);
+        // Route::get('/testing', ['as' => '.test', 'uses' => 'Admin\UserController@testing']);
+        Route::get('/details/{id}', ['as' => '.details', 'uses' => 'Admin\PageController@details']);
+        
         Route::get('/', ['as' => '', 'uses' => 'Admin\UserController@index']);
         Route::get('/detail/{id}', ['as' => '.detail', 'uses' => 'Admin\UserController@detail']);
         Route::get('/ban/{id}', ['as' => '.ban', 'uses' => 'Admin\UserController@ban']);
@@ -347,7 +357,7 @@ Route::group(['middleware' => ['auth', 'be.navigation', 'be.breadcrumbs', 'check
         Route::get('/pay_commission', ['as' => '.pay_commission', 'uses' => 'Admin\UserController@paid_tree_list']);
         Route::get('/pay_commission2', ['as' => '.pay_commission', 'uses' => 'Admin\UserController@paid_tree_list2']);
         Route::post('/pay_commission', ['as' => '.pay_commission', 'uses' => 'Admin\UserController@paid_history_tree_list']);
-        Route::get('/details/{id}', ['as' => '.details', 'uses' => 'Admin\UserController@details']);
+        // Route::get('/details/{id}', ['as' => '.details', 'uses' => 'Admin\UserController@details']);
         Route::post('/details/{id}', ['as' => '.details', 'uses' => 'Admin\UserController@details_history']);
         Route::get('/test', ['as' => '.test', 'uses' => 'Admin\UserController@test']);
         Route::get('/edit/{id}', ['as' => '.edit', 'uses' => 'Admin\UserController@edit']);

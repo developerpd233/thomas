@@ -12,11 +12,18 @@ use Illuminate\Http\Response;
 use Grid;
 use Date;
 use Auth;
+use Session;
 // Models and Repo
 use App\Repositories\PageRepository;
 // Form Requests
 use App\Http\Requests\Admin\PageRequest;
 use App\Http\Requests\Admin\PageUpdateRequest;
+
+// Models and Repo
+use App\Repositories\UserRepository;
+use App\Repositories\GoalRepository;
+use App\Repositories\UserGoalRepository;
+use App\Repositories\SubscriberTreeHistoryRepository;
 
 class PageController extends Controller
 {
@@ -24,11 +31,30 @@ class PageController extends Controller
      * @var PageRepository
      */
     protected $page;
+    protected $user;
+    
+    /**
+     * @var GoalRepository
+     */
+    protected $goal;
 
-    public function __construct(PageRepository $page)
-    {
+    /**
+     * @var UserGoalRepository
+     */
+    protected $userGoal;
+
+    public function __construct(UserRepository $user, GoalRepository $goal, UserGoalRepository $userGoal, SubscriberTreeHistoryRepository $subscriberTreeHistory, PageRepository $page) {
+        $this->user = $user;
+        $this->goal = $goal;
+        $this->userGoal = $userGoal;
+        $this->subscriberTreeHistory = $subscriberTreeHistory;
         $this->page = $page;
     }
+    
+    // public function __construct(PageRepository $page)
+    // {
+    //     $this->page = $page;
+    // }
 
     /**
      * Show all pages
@@ -175,6 +201,66 @@ class PageController extends Controller
     public function add()
     {
         return view('admin.page.add');
+    }
+    
+    
+    public function details($id) {
+        
+        
+        if (Auth::user()->username == 'admin'):
+            $isAdmin = true;
+        else:
+            $isAdmin = false;
+        endif;
+        
+        
+        $user = Auth::user();
+        $amount = Session::get('amount');
+        $comm = Session::get('comm');
+        $total1 = Session::get('total');
+        $total_comm = Session::get('total_comm');
+        $curr = Session::get('curr');
+        $users = $this->user->findByField('parent_id', $id);
+        $parent = $this->user->findByField('id', $id);
+        $count = $this->user->findByField('parent_id', $id)->count();
+        
+        // $u = $users->paginate(2);
+        
+        // print_r("pre");
+        // dd($users);
+        // print_r("pre");
+        // die("hello world");
+        $admin = [
+            'id' => $id,
+            'users' => $users,
+            'count' => $count,
+            'amount' => $amount,
+            'comm' => $comm,
+            'total1' => $total1,
+            'total_comm' => $total_comm,
+            'curr' => $curr,
+            'user' => $user,
+            'parent' => $parent,
+            'isAdmin' => true,
+            'isHistory' => false,
+            'month' => 1,
+            'currentMonth' => \Carbon\Carbon::now()->format('F'),
+            'user_comission' => true,
+            'final_filter' => 0
+        ];
+        
+        // print_r("pre");
+        // dd($users);
+        // print_r("pre");
+        // die("hello world");
+        //return view('user.subs_level ', $admin);
+        return view('user.user_details_sub_level ', $admin);
+//        return view('admin.user-commission.details', $admin);
+    }
+    
+    
+    public function testing(){
+        die("hello new page");
     }
 
     /**

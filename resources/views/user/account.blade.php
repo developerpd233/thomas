@@ -5,12 +5,14 @@
 @endsection
 
 @section('content')
+
     <div class="panel-body">
         <ul class="nav nav-tabs" style="margin-bottom: 15px;">
-            <li class="{{ $activeTab == 'subscription' ? '' : 'active' }}"><a href="#account" data-toggle="tab">{{ trans('user.account_info') }}</a></li>
+  
+            <li class="{{--$activeTab == 'subscription' ? '' : 'active'--}}"><a href="#account" data-toggle="tab">{{ trans('user.account_info') }}</a></li>
             <li><a href="#contact" data-toggle="tab">{{ trans('user.contact_info') }}</a></li>
             <li><a href="#social" data-toggle="tab">{{ trans('user.social') }}</a></li>
-            <li class="{{ $activeTab == 'subscription' ? 'active' : '' }}"><a href="#subscription" data-toggle="tab">{{ trans('user.subscription') }}</a></li>
+            <li class="active {{--$activeTab == 'subscription' ? 'active' : ''--}}"><a href="#subscription" data-toggle="tab">{{ trans('user.subscription') }}</a></li>
             {{--<li><a href="#payment" data-toggle="tab">{{ trans('user.payment_methods') }}</a></li>--}}
         </ul>
 
@@ -22,7 +24,7 @@
             <div id="myTabContent" class="tab-content"> <!--class="tab-content"-->
 
                 <!-- Tab Account info -->
-                <div class="tab-pane fade {{ $activeTab == 'subscription' ? '' : 'active in' }}" id="account">
+                <div class="tab-pane fade {{--$activeTab == 'subscription' ? '' : 'active in'--}}" id="account">
 
                     <!--Profile Info-->
                     <div class="col-lg-4 col-md-4 col-sm-4 col-md-offset-0">
@@ -251,7 +253,7 @@
 
                 <p class="">{{__('subscription.Warning-1')}}</p>
 
-                <div class="tab-pane {{ $activeTab == 'subscription' ? 'active in' : '' }}" id="subscription">
+                <div class="tab-pane {{--$activeTab == 'subscription' ? 'active in' : ''--}}" id="subscription">
                     <div class="container">
                    
                         <a class="btn btn-danger btn-sm" href="{{route('user.ban')}}" style="color:#fff";>Cancel Subscription</a><br><br>

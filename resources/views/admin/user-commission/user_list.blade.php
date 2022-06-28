@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     <h3>List Of All Subscriber.
     </h3>
     <table class="table table-striped">

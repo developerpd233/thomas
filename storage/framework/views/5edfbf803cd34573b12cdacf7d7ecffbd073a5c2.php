@@ -1,0 +1,1187 @@
+<style>
+    .myTable>tbody>.myTableRow>td {
+        padding: 0px;
+    }
+
+    .myTable>tbody>.myTableRow>th {
+        padding: 0px;
+    }
+    
+.col-md-12 {
+    background: white;
+    padding-bottom: 80px;
+}
+div#table_id_info, div#table_id_paginate {
+    position: absolute;
+    bottom: -170px;
+    width: 100%;
+}
+.main-total-row {
+    display: flex;
+}
+
+.main-total-row div {
+    display: inline-block;
+}
+
+.main-total-row div.mont-fees {
+    width: 41%;
+    text-align: center;
+}
+
+.main-total-row .Right-wrong {width: 8%;text-align: center;}
+
+.main-total-row .total-fee {
+    width: 13%;
+    text-align: center;
+}
+
+.main-total-row .total-commission {
+    width: 4%;
+    text-align: center;
+}
+
+.main-total-row2 {display: flex;
+    margin-top: 20px;}
+
+.main-total-row2 .total-com {
+    width: 44%;
+    text-align: center;
+}
+
+.main-total-row2 .total-num {
+    text-align: center;
+    width: 23%;
+}
+.main-total {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 20px;
+}
+div#table_id_filter {
+    display: none;
+}
+td.zero {
+    visibility: hidden;
+}
+
+
+
+
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+<?php $__env->startSection('page_title'); ?>
+<?php echo e(trans('app.tree')); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<br>
+<?php $count = 0 ?>
+
+<?php
+
+$comm = '$7.5';
+$authUser = $user;
+$countNewRegistrations = -2;
+
+function ifRegisteredThisMonth($created_at) {
+    $todayDateee = date("m-Y");
+    $registerDate = date("m-Y", strtotime($created_at));
+    $diff = ($todayDateee == $registerDate ? "true" : "false");
+    return $diff;
+}
+
+$actual_link = "$_SERVER[REQUEST_URI]";
+if($actual_link == '/commission'){
+	
+}else{
+?>
+
+<form method="POST" action="<?php echo e(url('user/tree')); ?>" accept-charset="UTF-8">
+    <style>
+        .datepicker table tr td span.disabled,
+        .datepicker table tr td span.disabled:hover {
+            opacity: 0.4;
+        }
+    </style>
+    <ul class="form-validate-errors"></ul>
+    <input name="_token" type="hidden" value="tMbnk4MfFSYMG732qG0w1i9V4cxPZOOnBEKscTwi">
+    <input name="commission" type="hidden" value="<?php echo e($user_comission ==true?'true':'false'); ?>">
+    <input name="commission_user_id" type="hidden" value="<?php echo e(isset($id)? $id :null); ?>">
+    <div class="col-md-4">
+        <input name="daterange" type="text" placeholder="select Month" autocomplete="off">&nbsp;&nbsp;<input class="btn btn-primary text-white" type="submit" id="btn_submit" value="Apply" disabled="disabled">&nbsp;&nbsp;<a href="<?php echo e(url('user/tree')); ?>" class="btn btn-primary text-white">Reset</a>
+    </div>
+</form>
+
+
+
+<form method="POST" action="<?php echo e(url('user/tree')); ?>" accept-charset="UTF-8">
+    <style>
+        .datepicker table tr td span.disabled,
+        .datepicker table tr td span.disabled:hover {
+            opacity: 0.4;
+        }
+    </style>
+    <ul class="form-validate-errors"></ul>
+    <input name="_token" type="hidden" value="tMbnk4MfFSYMG732qG0w1i9V4cxPZOOnBEKscTwi">
+    <input name="commission" type="hidden" value="<?php echo e($user_comission ==true?'true':'false'); ?>">
+    <input name="commission_user_id" type="hidden" value="<?php echo e(isset($id)? $id :null); ?>">
+<div class="col-md-4">
+        <input name="daterange1" type="text" placeholder="select Month" autocomplete="off">&nbsp;&nbsp;<input class="btn btn-primary text-white" type="submit" id="btn_submit1" value="Apply" >&nbsp;&nbsp;<a href="<?php echo e(url('user/tree')); ?>" class="btn btn-primary text-white">Reset</a>
+    </div>
+</form>
+<?php } 
+
+?>
+
+<div class="col-md-4">
+        <?php if($month ==1): ?>
+        <center><h3>Month: <?php echo e((isset($currentMonth))? $currentMonth: ''); ?></h3></center>
+        <?php elseif($month ==2): ?>
+        <center><h3>Month: <?php echo e((isset($currentMonth))? $currentMonth: ''); ?> </h3></center>
+        <?php else: ?>
+        <h2></h2>
+        <?php endif; ?>
+    </div>
+
+<script>
+    $(function () {
+        var enableDisableSubmitBtn = function (selectedMonth) {
+            //var monthValue = $('input[name="daterange"]').val().trim();
+            //alert(monthValue);
+            var disableBtn = (selectedMonth.length == 0);
+            $('#btn_submit').attr('disabled', disableBtn);
+        }
+
+        var tdate = new Date();
+        var MM = tdate.getMonth(); //yields month
+        var yyyy = tdate.getFullYear(); //yields year
+        var currentDate = (MM) + " " + yyyy;
+
+        $('input[name="daterange"]').datepicker({
+            autoclose: true,
+            format: "MM , yyyy",
+            viewMode: "months",
+            minViewMode: "months",
+            startDate: "Sep 2020",
+            endDate: currentDate,
+            clearBtn: true,
+        }).on('changeMonth', function (e) {
+            var currMonth = new Date(e.date).getMonth() + 1;
+            var currYear = String(e.date).split(" ")[3];
+            var selectedMonth = (currMonth + "-" + currYear);
+            enableDisableSubmitBtn(selectedMonth);
+        });
+    });
+</script>
+
+<?php
+    // echo "<pre>";
+    // print_r($users);
+    // echo "<pre>";
+?>
+<?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+<?php $count++ ?>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+<?php if ($count) : ?>
+    <a href="/group/send/<?php echo e($user->username); ?>" class="btn btn-primary text-white" type="button" style="float: right">
+        Message All</a>
+<?php endif; ?>
+<?php if($user_comission == true): ?>
+<a href="<?php echo e(url('admin/user/pay_commission')); ?>" class="btn btn-primary text-white" value="Back" style="margin-right: 5px; float: right;">Back</a>
+<?php endif; ?>
+<br>
+
+<?php
+    // dd($users, $users[0]->children, $users[0]->children[1]->children);
+?>
+
+
+
+<table id="table_id" class="display">
+    <thead>
+        <?php if ($count) : ?>
+        <tr>
+                <th style = "width: 51px;">Level</th>
+                <th style = "width: 31px;">SN</th>
+                <th style = "width: 149px;">Subscribers</th>
+                <th style = "width: 99px;">Created At</th>
+                <th style = "width: 60px;">Status</th>
+                <th style = "width: 87px;">Total fees</th>
+                <th style = "width: 160px;">Total commissions</th>
+                <th style = "width: 68px;">Paid At</th>
+                <th style = "width: 80px;">Message</th>
+        </tr>
+    </thead>
+    <tbody>
+
+            
+            
+   <?php
+            $level = 1;
+            $count = 1;
+            $one = 0;
+          ?>
+   
+  <?php foreach ($users as $list) : ?>
+    <?php if(!$final_filter): ?>
+      <tr class="level1">
+            <td><?php echo e($level); ?></td>
+            <td><?php echo e($count); ?></td>
+            <td><?php echo e($list->first_name." ". $list->last_name); ?></td>
+            <td><?php echo e(!$list->created_at? '__':$list->created_at); ?></td>
+            <td> <?php
+            //   echo '&#x274C';
+            // dd($list);
+                        if ($list->is_active == 'YES' && $list->isActiveByComission == 'NO') {            
+                            if(ifRegisteredThisMonth($list->created_at) == "true"){
+                                $countNewRegistrations += 1;
+                                if($list->subscriber_commision >= 50):
+                                    echo '&#9989'; //right
+                                    $one++;
+                                else:
+                                    echo '&#x274C';//wrong
+                                endif;
+                            }
+                            else{
+                                echo '&#9989'; //right 
+                                $one++;
+                            }
+                        } else if ($list->is_active == 'YES' && $list->isActiveByComission == 'YES' && $list->subscriber_commision >= 50) {
+                            $countNewRegistrations += 1;
+                            echo '&#9989'; //right
+                            $one++;    
+                        } else {
+                            // dd("test");
+                            echo '&#x274C';//&#x274C
+                        }
+                        ?>
+            </td>
+            
+            <td>
+                        <?php
+                        if ($list->is_active == 'YES' && $list->isActiveByComission == 'NO') {                            
+                            if (ifRegisteredThisMonth($list->created_at) == "true") {
+                                if($list->subscriber_commision >= 50):
+                                    echo $amount;                                       
+                                else:
+                                    echo 'Not paid';
+                                endif;
+                            } else {
+                                echo $amount;
+                            }
+                        } else if ($list->is_active == 'YES' && $list->isActiveByComission == 'YES' && $list->subscriber_commision >= 50) {    
+                            echo $amount;
+                        } else {
+                            echo 'Not paid';
+                        }
+                        ?>
+            </td>
+            <td> 
+                        <?php
+                        if ($list->is_active == 'YES' && $list->isActiveByComission == 'NO') {                            
+                            if (ifRegisteredThisMonth($list->created_at) == "true") {
+                                if($list->subscriber_commision >= 50):
+                                    echo $comm;                                      
+                                else:
+                                    echo '0';
+                                endif;
+                            } else {
+                                echo $comm;
+                            }
+                        } else if ($list->is_active == 'YES' && $list->isActiveByComission == 'YES' && $list->subscriber_commision >= 50) {     
+                            echo $comm;
+                        } else {
+                            echo '0';
+                        }
+                        ?>
+            </td>
+                   
+             <?php if($list->paid_at == null): ?>
+                    <td id="<?php echo e($list->id); ?>">
+                        <!-- <?php if($isAdmin): ?>
+                        <?php if($isHistory): ?>
+                        <button class="btn btn-warning btn-xs pay_amount" data-id="<?php echo e($list->id); ?>" data-history_saved_at="<?php echo e($list->history_saved_at); ?>" type="button" style="color: white">Paid</button>
+                        <?php else: ?>
+                        <button class="btn btn-warning btn-xs pay_amount" data-id="<?php echo e($list->id); ?>" data-history_saved_at="<?php echo e($list->history_saved_at); ?>" type="button" style="color: white" disabled>Paid</button>
+                        <?php endif; ?>
+                        <?php else: ?>
+                        <?php echo e('___'); ?>
+
+                        <?php endif; ?> -->
+                        <button class="btn btn-warning btn-xs"  type="button" style="color: white" disabled>Paid</button>
+                    </td>
+                    <?php else: ?>
+                    <td id="<?php echo e($list->id); ?>"><?php echo e((new \DateTime($list->paid_at))->format('d-M-Y')); ?></td>
+                    <?php endif; ?>
+                        
+                    <td>
+                        <a href="/message/<?php echo e($user->username); ?>" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
+                    </td>
+                    
+                    
+        </tr>
+                <?php
+                    $count++;
+                    // $level = " ";
+                ?>
+                <?php elseif( date('Y-m', strtotime($list->created_at)) <= date('Y-m', strtotime($final_filter)) ): ?>
+                    <tr class="myTableRow">
+                        <th><?php echo e($level); ?></th>
+                        <td><?php echo e($count); ?></td>
+                        <td><?php echo e($list->first_name." ". $list->last_name); ?></td>
+                        <td><?php echo e(!$list->created_at? '__':$list->created_at); ?></td>
+                        <td> <?php
+                            if ($list->is_active == 'YES') {
+
+                                if(ifRegisteredThisMonth($list->created_at) == "true"){
+                                    $countNewRegistrations += 1;
+                                    //echo '&#x274C';                                   
+                                    if($list->subscriber_commision >= 50):
+                                        echo '&#9989'; //right
+                                        $one++;
+                                    else:
+                                        echo '&#x274C';//wrong
+                                    endif;
+                                }
+                                else{
+                                    // dd("test");
+                                    echo '&#9989'; //right 
+                                    $one++;
+                                }
+
+                            } else {
+                                echo '&#x274C';//&#x274C
+                            }
+
+                            ?></td>
+                        <td>
+                            <?php
+                            if ($list->is_active == 'YES') {                            
+                                if (ifRegisteredThisMonth($list->created_at) == "true") {
+                                    if($list->subscriber_commision >= 50):
+                                        echo $amount;                                       
+                                    else:
+                                        echo 'Not paid';
+                                    endif;
+                                } else {
+                                    echo $amount;
+                                }
+                            } else {
+                                echo 'Not paid';
+                            }
+                            ?>
+                        </td>
+                        <td> 
+                            <?php
+                            if ($list->is_active == 'YES') {                            
+                                if (ifRegisteredThisMonth($list->created_at) == "true") {
+                                    if($list->subscriber_commision >= 50):
+                                        echo $comm;                                      
+                                    else:
+                                        echo '0';
+                                    endif;
+                                } else {
+                                    echo $comm;
+                                }
+                            } else {
+                                echo '0';
+                            }
+                            ?>
+                        </td>
+                        <?php if($list->paid_at == null): ?>
+                        <td id="<?php echo e($list->id); ?>">
+                            <!-- <?php if($isAdmin): ?>
+                            <?php if($isHistory): ?>
+                            <button class="btn btn-warning btn-xs pay_amount" data-id="<?php echo e($list->id); ?>" data-history_saved_at="<?php echo e($list->history_saved_at); ?>" type="button" style="color: white">Paid</button>
+                            <?php else: ?>
+                            <button class="btn btn-warning btn-xs pay_amount" data-id="<?php echo e($list->id); ?>" data-history_saved_at="<?php echo e($list->history_saved_at); ?>" type="button" style="color: white" disabled>Paid</button>
+                            <?php endif; ?>
+                            <?php else: ?>
+                            <?php echo e('___'); ?>
+
+                            <?php endif; ?> -->
+                            <button class="btn btn-warning btn-xs"  type="button" style="color: white" disabled>Paid</button>
+                        </td>
+                        <?php else: ?>
+                        <td id="<?php echo e($list->id); ?>"><?php echo e((new \DateTime($list->paid_at))->format('d-M-Y')); ?></td>
+                        <?php endif; ?>
+                        <td>
+                            <a href="/message/<?php echo e($user->username); ?>" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
+                        </td>
+                    </tr>
+                    <?php
+                    $count++;
+                    // $level = "";
+                    ?>
+                <?php endif; ?>
+        <?php endforeach; ?>
+  
+            
+
+            <tr>
+                <td class="zero">1</td>
+                <td class="zero">1</td>
+                <td class="zero">1</td>
+                <td class="zero">1</td>
+                <td class="zero">1</td>
+                <td class="zero">1</td>
+                <td class="zero">0</td>
+                <td class="zero">1</td>
+                <td class="zero">1</td>
+            </tr> 
+            <?php
+            $count1 = 1;
+            $secondLevel = 2;
+            $two = 0;
+            ?>
+            <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $second_level = $user->children ?>
+                    <?php $__currentLoopData = $second_level; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $second): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php if(!$final_filter): ?>
+                        <tr class="myTableRow level2">
+                            <th><?php echo e($secondLevel); ?></th>
+                            <td><?php echo $count1 ?></td>
+                            <td><?php echo e($second->first_name." ".$second->last_name); ?></td>
+                            <td><?php echo e(!$second->created_at? '__':$second->created_at); ?></td>
+                            <td> 
+                                <?php
+                                if ($second->is_active == 'YES' && $second->isActiveByComission == 'NO') {                            
+                                    if (ifRegisteredThisMonth($second->created_at) == "true") {
+                                        if($second->subscriber_commision >= 50):
+                                            echo '&#9989'; //right
+                                            $two++;
+                                        else:
+                                            echo '&#x274C';//wrong
+                                        endif;
+                                    } else {
+                                        echo '&#9989'; //right 
+                                        $two++;
+                                    }
+                                } else if ($second->is_active == 'YES' && $second->isActiveByComission == 'YES' && $second->subscriber_commision >= 50) {
+                                    echo '&#9989'; //right 
+                                    $two++;    
+                                } else {
+                                    echo '&#x274C'; //wrong
+                                }                                
+                                ?>
+                            </td>
+                            <td> 
+                                <?php
+                                if ($second->is_active == 'YES' && $second->isActiveByComission == 'NO') {                            
+                                    if (ifRegisteredThisMonth($second->created_at) == "true") {
+                                        if($second->subscriber_commision >= 50):
+                                            echo $amount;                                       
+                                        else:
+                                            echo 'Not paid';
+                                        endif;
+                                    } else {
+                                        echo $amount;
+                                    }
+                                } else if ($second->is_active == 'YES' && $second->isActiveByComission == 'YES' && $second->subscriber_commision >= 50) {    
+                                    echo $amount;
+                                } else {
+                                    echo 'Not paid';
+                                }
+                                ?>
+                            </td>
+                            <td> 
+                                <?php
+                                if ($second->is_active == 'YES' && $second->isActiveByComission == 'NO') {                            
+                                    if (ifRegisteredThisMonth($second->created_at) == "true") {
+                                        if($second->subscriber_commision >= 50):
+                                            echo $comm;                                      
+                                        else:
+                                            echo '0';
+                                        endif;
+                                    } else {
+                                        echo $comm;
+                                    }
+                                } else if ($second->is_active == 'YES' && $second->isActiveByComission == 'YES' && $second->subscriber_commision >= 50) {
+                                    echo $comm;
+                                } else {
+                                    echo '0';
+                                }
+                                ?>
+                            </td>
+                            <?php if($second->paid_at == null): ?>
+                            <td id="<?php echo e($second->id); ?>">
+                                <button class="btn btn-warning btn-xs"  type="button" style="color: white" disabled>Paid</button>
+                            </td>
+                            <?php else: ?>
+                            <td id="<?php echo e($second->id); ?>"><?php echo e((new \DateTime($second->paid_at))->format('d-M-Y')); ?></td>
+                            <?php endif; ?>
+                            <td>
+                                <a href="/message/<?php echo e($second->username); ?>" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
+                            </td>
+                        </tr>
+                        <?php
+                        $count1++;
+                        // $secondLevel = " ";
+                        ?>
+                        <?php elseif( date('Y-m', strtotime($second->created_at)) <= date('Y-m', strtotime($final_filter)) ): ?>    
+                        <tr class="myTableRow">
+                            <th><?php echo e($secondLevel); ?></th>
+                            <td><?php echo $count1 ?></td>
+                            <td><?php echo e($second->first_name." ".$second->last_name); ?></td>
+                            <td><?php echo e(!$second->created_at? '__':$second->created_at); ?></td>
+                            <td> 
+                                <?php
+
+                                if ($second->is_active == 'YES') {    
+                                    
+                                    if (ifRegisteredThisMonth($second->created_at) == "true") {
+                                        if($second->subscriber_commision >= 50):
+                                            echo '&#9989'; //right
+                                            $two++;
+                                        else:
+                                            echo '&#x274C';//wrong
+                                        endif;
+                                    } else {
+                                        // dd("test");
+                                        echo '&#9989'; //right 
+                                        $two++;
+                                    }
+                                } else {
+                                    echo '&#x274C'; //wrong
+                                }                                
+                                ?>
+                            </td>
+                            <td> 
+                                <?php
+                                if ($second->is_active == 'YES') {                            
+                                    if (ifRegisteredThisMonth($second->created_at) == "true") {
+                                        if($second->subscriber_commision >= 50):
+                                            echo $amount;                                       
+                                        else:
+                                            echo 'Not paid';
+                                        endif;
+                                    } else {
+                                        echo $amount;
+                                    }
+                                } else {
+                                    echo 'Not paid';
+                                }
+                                ?>
+                            </td>
+                            <td> 
+                                <?php
+                                if ($second->is_active == 'YES') {                            
+                                    if (ifRegisteredThisMonth($second->created_at) == "true") {
+                                        if($second->subscriber_commision >= 50):
+                                            echo $comm;                                      
+                                        else:
+                                            echo '0';
+                                        endif;
+                                    } else {
+                                        echo $comm;
+                                    }
+                                } else {
+                                    echo '0';
+                                }
+                                ?>
+                            </td>
+                            <?php if($second->paid_at == null): ?>
+                            <td id="<?php echo e($second->id); ?>">
+                                <button class="btn btn-warning btn-xs"  type="button" style="color: white" disabled>Paid</button>
+                            </td>
+                            <?php else: ?>
+                            <td id="<?php echo e($second->id); ?>"><?php echo e((new \DateTime($second->paid_at))->format('d-M-Y')); ?></td>
+                            <?php endif; ?>
+                            <td>
+                                <a href="/message/<?php echo e($second->username); ?>" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
+                            </td>
+                        </tr>
+                        <?php
+                        $count1++;
+                        // $secondLevel = "";
+                        ?>
+                    <?php endif; ?>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+       
+       
+        
+            
+            <tr>
+                <td class="zero">2</td>
+                <td class="zero">2</td>
+                <td class="zero">2</td>
+                <td class="zero">2</td>
+                <td class="zero">2</td>
+                <td class="zero">2</td>
+                <td class="zero">0</td>
+                <td class="zero">2</td>
+                <td class="zero">2</td>
+            </tr> 
+            <?php
+            $levelThree = 3;
+            $count2 = 0;
+            $three = 0;
+            ?>
+            <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $second_level = $user->children; ?>
+                    <?php $__currentLoopData = $second_level; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $second): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $third_level = $second->children ?>
+                        <?php $__currentLoopData = $third_level; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $third): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if(!$final_filter): ?>
+                                <tr class="myTableRow">
+                                    <th><?php echo e($levelThree); ?></th>
+                                    <td><?php echo e(++$count2); ?></td>
+                                    <td><?php echo e($third->first_name." ".$third->last_name); ?></td>
+                                    <td><?php echo e(!$third->created_at? '__':$third->created_at); ?></td>
+                                    <td> 
+                                        <?php
+                                        if ($third->is_active == 'YES' && $third->isActiveByComission == 'NO') {                            
+                                            if (ifRegisteredThisMonth($third->created_at) == "true") {
+                                                if($third->subscriber_commision >= 50):
+                                                    echo '&#9989'; //right
+                                                    $three++;
+                                                else:
+                                                    echo '&#x274C';//wrong
+                                                endif;
+                                            } else {
+                                                echo '&#9989'; //right 
+                                                $three++;
+                                            }
+                                        } else if ($third->is_active == 'YES' && $third->isActiveByComission == 'YES' && $third->subscriber_commision >= 50) {
+                                            echo '&#9989'; //right 
+                                            $three++;    
+                                        } else {
+                                            echo '&#x274C'; //wrong
+                                        }
+                                        ?>
+                                    </td>
+                                    <td> 
+                                        <?php
+                                        if ($third->is_active == 'YES' && $third->isActiveByComission == 'NO') {
+                                            if (ifRegisteredThisMonth($third->created_at) == "true") {
+                                                if($third->subscriber_commision >= 50):
+                                                    echo $amount;                                       
+                                                else:
+                                                    echo 'Not paid';
+                                                endif;
+                                            } else {
+                                                echo $amount;
+                                            }
+                                        } else if ($third->is_active == 'YES' && $third->isActiveByComission == 'YES' && $third->subscriber_commision >= 50) {
+                                            echo $amount;
+                                        } else {
+                                            echo 'Not paid';
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        if ($third->is_active == 'YES' && $third->isActiveByComission == 'NO') {
+                                            if (ifRegisteredThisMonth($third->created_at) == "true") {
+                                                if($third->subscriber_commision >= 50):
+                                                    echo $comm;                                      
+                                                else:
+                                                    echo '0';
+                                                endif;
+                                            } else {
+                                                echo $comm;
+                                            }
+                                        } else if ($third->is_active == 'YES' && $third->isActiveByComission == 'YES' && $third->subscriber_commision >= 50) {
+                                            echo $comm;
+                                        } else {
+                                            echo '0';
+                                        }
+                                        ?>
+                                    </td>
+                                    <?php if($third->paid_at == null): ?>
+                                    <td id="<?php echo e($third->id); ?>">
+                                        <button class="btn btn-warning btn-xs"  type="button" style="color: white" disabled>Paid</button>
+                                    </td>
+                                    <?php else: ?>
+                                    <td id="<?php echo e($third->id); ?>"><?php echo e((new \DateTime($third->paid_at))->format('d-M-Y')); ?></td>
+                                    <?php endif; ?>
+                                    <td>
+                                        <a href="/message/<?php echo e($third->username); ?>" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
+                                    </td>
+                                </tr>     
+                                <?php 
+                                
+                                    // $levelThree = " ";
+                                
+                                ?>
+                            <?php elseif( date('Y-m', strtotime($third->created_at)) <= date('Y-m', strtotime($final_filter)) ): ?>
+                                <tr class="myTableRow">
+                                    <th><?php echo e($levelThree); ?></th>
+                                    <td><?php echo e(++$count2); ?></td>
+                                    <td><?php echo e($third->first_name." ".$third->last_name); ?></td>
+                                    <td><?php echo e(!$third->created_at? '__':$third->created_at); ?></td>
+                                    <td> 
+                                        <?php
+                                        if ($third->is_active == 'YES') {                            
+                                            if (ifRegisteredThisMonth($third->created_at) == "true") {
+                                                if($third->subscriber_commision >= 50):
+                                                    echo '&#9989'; //right
+                                                    $three++;
+                                                else:
+                                                    echo '&#x274C';//wrong
+                                                endif;
+                                            } else {
+                                                echo '&#9989'; //right 
+                                                $three++;
+                                            }
+                                        } else {
+                                            echo '&#x274C'; //wrong
+                                        }
+                                        ?>
+                                    </td>
+                                    <td> 
+                                        <?php
+                                        if ($third->is_active == 'YES') {
+                                            if (ifRegisteredThisMonth($third->created_at) == "true") {
+                                                if($third->subscriber_commision >= 50):
+                                                    echo $amount;                                       
+                                                else:
+                                                    echo 'Not paid';
+                                                endif;
+                                            } else {
+                                                echo $amount;
+                                            }
+                                        } else {
+                                            echo 'Not paid';
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        if ($third->is_active == 'YES') {
+                                            if (ifRegisteredThisMonth($third->created_at) == "true") {
+                                                if($third->subscriber_commision >= 50):
+                                                    echo $comm;                                      
+                                                else:
+                                                    echo '0';
+                                                endif;
+                                            } else {
+                                                echo $comm;
+                                            }
+                                        } else {
+                                            echo '0';
+                                        }
+                                        ?>
+                                    </td>
+                                    <?php if($third->paid_at == null): ?>
+                                    <td id="<?php echo e($third->id); ?>">
+                                        <button class="btn btn-warning btn-xs"  type="button" style="color: white" disabled>Paid</button>
+                                    </td>
+                                    <?php else: ?>
+                                    <td id="<?php echo e($third->id); ?>"><?php echo e((new \DateTime($third->paid_at))->format('d-M-Y')); ?></td>
+                                    <?php endif; ?>
+                                    <td>
+                                        <a href="/message/<?php echo e($third->username); ?>" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
+                                    </td>
+                                </tr>
+                                <?php 
+                                
+                                    // $levelThree = "";
+                                ?>    
+                            <?php endif; ?>                                
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+       
+       
+       
+            
+            <tr>
+                <td class="zero">3</td>
+                <td class="zero">3</td>
+                <td class="zero">3</td>
+                <td class="zero">3</td>
+                <td class="zero">3</td>
+                <td class="zero">3</td>
+                <td class="zero">0</td>
+                <td class="zero">3</td>
+                <td class="zero">3</td>
+            </tr> 
+     
+            <?php
+            $levelFour = 4;
+            $count3 = 0;
+            $four = 0
+            ?>
+            <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $second_level = $user->children ?>
+                <?php $__currentLoopData = $second_level; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $second): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php $third_level = $second->children ?>
+                    <?php $__currentLoopData = $third_level; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $third): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php $forth_level = $third->children ?>
+                        <?php $__currentLoopData = $forth_level; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $forth): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if(!$final_filter): ?>
+                                <tr class="myTableRow">
+                                    <th><?php echo e($levelFour); ?></th>
+                                    <td><?php echo e(++$count3); ?></td>
+                                    <td><?php echo e($forth->first_name." ".$forth->last_name); ?></td>
+                                    <td><?php echo e(!$forth->created_at? '__':$forth->created_at); ?></td>
+                                    <td>
+                                        <?php
+                                        if ($forth->is_active == 'YES' && $forth->isActiveByComission == 'NO') {                   
+                                            if (ifRegisteredThisMonth($forth->created_at) == "true") {
+                                                if($forth->subscriber_commision >= 50):
+                                                    echo '&#9989'; //right
+                                                    $four++;
+                                                else:
+                                                    echo '&#x274C';//wrong
+                                                endif;
+                                            } else {
+                                                echo '&#9989'; //right 
+                                                $four++;
+                                            }
+                                        } else if ($forth->is_active == 'YES' && $forth->isActiveByComission == 'YES' && $forth->subscriber_commision >= 50) {     
+                                            echo '&#9989'; //right 
+                                            $four++;
+                                        } else {
+                                            echo '&#x274C'; //wrong
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        if ($forth->is_active == 'YES' && $forth->isActiveByComission == 'NO') {                            
+                                            if (ifRegisteredThisMonth($forth->created_at) == "true") {
+                                                if($forth->subscriber_commision >= 50):
+                                                    echo $amount;                                       
+                                                else:
+                                                    echo 'Not paid';
+                                                endif;
+                                            } else {
+                                                echo $amount;
+                                            }
+                                        } else if ($forth->is_active == 'YES' && $forth->isActiveByComission == 'YES' && $forth->subscriber_commision >= 50) {
+                                            echo $amount;
+                                        } else {
+                                            echo 'Not paid';
+                                        }    
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        if ($forth->is_active == 'YES' && $forth->isActiveByComission == 'NO') {                            
+                                            if (ifRegisteredThisMonth($forth->created_at) == "true") {
+                                                if($forth->subscriber_commision >= 50):
+                                                    echo $comm;                                      
+                                                else:
+                                                    echo '0';
+                                                endif;
+                                            } else {
+                                                echo $comm;
+                                            }
+                                        } else if ($forth->is_active == 'YES' && $forth->isActiveByComission == 'YES' && $forth->subscriber_commision >= 50) {
+                                            echo $comm;
+                                        } else {
+                                            echo '0';
+                                        }
+                                        ?>
+                                    </td>
+                                    <?php if($forth->paid_at == null): ?>
+                                    <td id="<?php echo e($forth->id); ?>">
+                                        <button class="btn btn-warning btn-xs"  type="button" style="color: white" disabled>Paid</button>
+                                    </td>
+                                    <?php else: ?>
+                                    <td id="<?php echo e($forth->id); ?>"><?php echo e((new \DateTime($forth->paid_at))->format('d-M-Y')); ?></td>
+                                    <?php endif; ?>
+                                    <td><a href="/message/<?php echo e($forth->username); ?>" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
+                                    </td>
+                                </tr>
+                                <?php 
+                                // $levelFour = " ";
+                                ?>
+                            <?php elseif( date('Y-m', strtotime($forth->created_at)) == date('Y-m', strtotime($final_filter)) ): ?>
+                               <tr class="myTableRow">
+                                    <th><?php echo e($levelFour); ?></th>
+                                    <td><?php echo e(++$count3); ?></td>
+                                    <td><?php echo e($forth->first_name." ".$forth->last_name); ?></td>
+                                    <td><?php echo e(!$forth->created_at? '__':$forth->created_at); ?></td>
+                                    <td>
+                                        <?php
+                                        if ($forth->is_active == 'YES') {                            
+                                            if (ifRegisteredThisMonth($forth->created_at) == "true") {
+                                                if($forth->subscriber_commision >= 50):
+                                                    echo '&#9989'; //right
+                                                    $four++;
+                                                else:
+                                                    echo '&#x274C';//wrong
+                                                endif;
+                                            } else {
+                                                echo '&#9989'; //right 
+                                                $four++;
+                                            }
+                                        } else {
+                                            echo '&#x274C'; //wrong
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        if ($forth->is_active == 'YES') {                            
+                                            if (ifRegisteredThisMonth($forth->created_at) == "true") {
+                                                if($forth->subscriber_commision >= 50):
+                                                    echo $amount;                                       
+                                                else:
+                                                    echo 'Not paid';
+                                                endif;
+                                            } else {
+                                                echo $amount;
+                                            }
+                                        } else {
+                                            echo 'Not paid';
+                                        }    
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        if ($forth->is_active == 'YES') {                            
+                                            if (ifRegisteredThisMonth($forth->created_at) == "true") {
+                                                if($forth->subscriber_commision >= 50):
+                                                    echo $comm;                                      
+                                                else:
+                                                    echo '0';
+                                                endif;
+                                            } else {
+                                                echo $comm;
+                                            }
+                                        } else {
+                                            echo '0';
+                                        }
+                                        ?>
+                                    </td>
+                                    <?php if($forth->paid_at == null): ?>
+                                    <td id="<?php echo e($forth->id); ?>">
+                                        <button class="btn btn-warning btn-xs"  type="button" style="color: white" disabled>Paid</button>
+                                    </td>
+                                    <?php else: ?>
+                                    <td id="<?php echo e($forth->id); ?>"><?php echo e((new \DateTime($forth->paid_at))->format('d-M-Y')); ?></td>
+                                    <?php endif; ?>
+                                    <td><a href="/message/<?php echo e($forth->username); ?>" class="btn btn-primary btn-xs" type="button" style="color: white">Message</a>
+                                    </td>
+                                </tr>
+                               <?php 
+                            //   $levelFour = "";
+                               ?>
+                            <?php endif; ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>                            
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+       
+       
+       
+       
+       
+       
+       
+    </tbody>
+</table>
+
+
+<?php $total = $one + $two + $three + $four; 
+// dd($total);
+?>
+
+            <?php if(ifRegisteredThisMonth($authUser->created_at) == "true"): //if user registered for this month?> 
+                <tr>
+                    <th colspan="4" style="text-align: center;font-size: 2rem">Monthly Fees Through Subscriptions</th>
+                    <!-- Right/wrong arrow -->
+                    <td style="font-size: 2rem">
+                        <?php      
+                        if ($countNewRegistrations >= 0 || $authUser->is_active == 'YES') {
+                            echo '&#9989';                            
+                        } else {
+                            echo '&#x274C';
+                        }
+                        ?>
+                    </td>
+                    <!-- Total fees -->
+                    <td style="font-size: 2rem">$0</td>
+                    <!-- Total commissions -->
+                    <td style="font-size: 2rem">                    
+                        <?php
+                        if ($countNewRegistrations >= 0 && $authUser->is_active == 'YES') {
+                                echo $amount;                                                                                    
+                        } else {
+                            echo 'Not Paid';
+                        }
+                        ?> 
+                    </td>
+                    <!-- User can with drawn -->
+                    <td style="font-size: 2rem">
+                        <?php
+                        if ($countNewRegistrations > 0) {
+                            $canWithDrawn = (($countNewRegistrations) * 25);
+                            if($canWithDrawn > 0):
+                                echo '$'.((int)$canWithDrawn);
+                            endif;
+                        }
+                        ?>
+                    </td>
+                </tr>
+            
+            
+            
+            
+            
+            <?php else:  //if user not registered for this month ?>
+            <div class="main-total">
+    <div class="main-total-row">
+        <div class="mont-fees">
+            Monthly Fees Through Subscriptions
+        </div>
+        <div class="Right-wrong">
+            <!--Right/wrong arrow-->
+            <?php      
+                                if ($countNewRegistrations >= 0 || $authUser->is_active == 'YES') {
+                                        echo '&#9989';                            
+                                } else {
+                                    echo '&#x274C';
+                                }
+                ?>
+        </div>
+        <div class="total-fee">
+            <!--Total fees-->
+            <?php
+                    if ($countNewRegistrations >= 0 || $authUser->is_active == 'YES') {
+                        echo $amount;                                                                                    
+                    } else {
+                        echo 'Not Paid';
+                    }
+                ?>
+        </div>
+        <div class="total-commission">
+            <!--Total commissions-->
+            <?php
+                    if ($countNewRegistrations >= 0 && $authUser->subscriber_commision >= 50 ) {
+                        if($authUser->subscriber_commision >= 50){
+                            echo '$50';
+                        } else{
+                            $totaComission = ( ($countNewRegistrations) * 25);
+                            echo '$'.$totaComission;    
+                        }
+                    } else if($countNewRegistrations >= 0 && $authUser->is_active == 'YES' && $authUser->isActiveByComission == 'NO' ){
+                        echo '$50';
+                    } else {
+                        echo '0';
+                    }
+                ?>
+        </div>
+        <div class="draw-can">
+            <!--User can with drawn-->
+            <?php
+                    if ($authUser->subscriber_commision > 50) {
+                        echo '$'.(((int)$authUser->subscriber_commision) - 50 );
+                    }
+                    /*if ($countNewRegistrations > 2) {
+                        $canWithDrawn = (($countNewRegistrations - 2) * 25);
+                        if($canWithDrawn > 0):
+                            echo '$'.((int)$canWithDrawn);
+                        endif;
+                    }*/
+                ?>
+        </div>
+    </div>
+    <div class="main-total-row2">
+        <div class="total-com">
+            Total Commission at 4 levels 60% (15% at each level)
+        </div>
+        <div class="total-num">
+            <?php if(env('SITE') == 'ENG'): ?>
+            <?php $commission_perc = (50*15)/100; ?>
+            <div class="divtotal">
+            </div>
+            <?php else: ?>
+            <?php $commission_perc = (1000*15)/100; ?>
+
+            <div class="divtotal">
+            </div>
+
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+        <?php endif; ?>
+    
+<?php else : ?>
+        <h1>Users don't have any subscriber</h1>
+<?php endif; ?>       
+
+
+
+
+
+<script src="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"/></script>
+<script>
+$(document).ready( function () {
+    
+    $('#table_id').DataTable({
+        lengthMenu: [
+            [500, 1000, 5000, 10000],
+            [500, 1000, 5000, 10000],
+        ],
+    });
+    
+    
+    
+    $('#table_id').DataTable();
+    function calculaterows(){
+        
+        
+        
+            var table = $('#table_id').DataTable();
+            // var lengthrow = table.rows({ page: 'current' }).nodes().length;
+            // var datas = table.column(6).data();
+            
+            
+            var datas = table.column(6, { page:'current' }).data();
+            var columval = 0;
+                $.each(datas, function(index, value) {
+                columval = columval+parseFloat(value.replace("$",""));
+                });
+            $('.divtotal').text('$'+columval);
+             
+
+            
+            // var rownumber = '<?php //echo $commission_perc ?>';
+            // var total = lengthrow * rownumber;
+            // // $('.divtotal').text('$'+total);
+            // $('.divtotal').text('$'+total);
+        
+    }
+    
+    $('.dataTables_wrapper').on('mousedown touchstart', '.paginate_button:not(.previous):not(.next)', function() {
+         setTimeout(function() { 
+            calculaterows();
+         }, 500);
+    });
+    setTimeout(function() {
+            calculaterows();
+    }, 500);
+   
+    $("select[name^='table_id_length']").on('change', function() {
+        // var pagelen = $(this).val();
+       calculaterows();
+    });
+   
+   setTimeout(function() {
+        // var pagelen = table.page.len();
+        calculaterows();
+    }, 500);
+    
+} );
+</script>
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.frontend.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

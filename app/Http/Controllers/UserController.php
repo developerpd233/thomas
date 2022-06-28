@@ -86,8 +86,10 @@ class UserController extends Controller
 
     public function edit()
     {
+        
         $user = Auth::user();
         if (request()->headers->get('referer') == 'http://127.0.0.1:8000/user/dashboard') {
+            
             return view('user.account', [
                 'user' => $user,
                 'activeTab' => 'subscription'
@@ -96,6 +98,7 @@ class UserController extends Controller
         }
         
         if (request()->headers->get('referer') == 'http://127.0.0.1:8000/user/account') {
+            
             return view('user.account', [
                 'user' => $user,
                 'activeTab' => 'subscription'
@@ -256,8 +259,11 @@ class UserController extends Controller
         return view('user.tree', ['users' => $users, 'level' => $level]);
     }
 
+    
     public function tree_list()
     {
+        
+        
         $amount = Session::get('amount');
         $comm = Session::get('comm');
         $total1 = Session::get('total');
